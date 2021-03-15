@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% block body %}
+   
+
+
+    <div class="container mt-3">
+    <form method="POST" action="/postjob">
+    
+        <div class="mb-3">
+            
+            <input type="text" class="form-control" name="job_name" >
+            <input type = "submit" value ="add job" class="btn-btn-secondary">
+        </div>
+    </form>
+    </div>
+
+{% endblock body %}

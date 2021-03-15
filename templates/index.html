@@ -1,0 +1,59 @@
+{%extends 'base.html'%}
+{% block body %}
+    
+<div class="mt-3 container">
+        <h4>Post a Job  </h4>
+</div>
+
+        <div class="container mt-3">
+            <form method="POST" action="/postjob">
+        
+                <div class="mb-3">
+
+        
+                    <input type="text" class="form-control" name="job_name" placeholder="Job Role">
+                    <input type="text" class="form-control" name="company_name" placeholder="Company name">
+                    <input type="text" class="form-control" name="stipend" placeholder="Stipend">
+                    <input type="text" class="form-control" name="location" placeholder="Location">
+                    <input type="text" class="form-control" name="apply_link" placeholder="Apply Link">
+
+
+                    <button type="submit" class="mt-3 btn btn-primary ">Submit</button>
+
+                </div>
+
+                            <!-- <div class="mb-3">
+                                <label for="title" class="form-label">Job role</label>
+                                <input type="text" class="form-control" name="job_role" id="job_role" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="desc" class="form-label">Todo Description</label>
+                                <input type="text" class="form-control" name="company_name" id="company_name">
+                            </div>
+                            <button type="submit" class="mt-3 btn btn-primary ">Submit</button> -->
+            </form>
+        </div>
+
+
+<div class=" container-sm ">
+           
+            {% for i in alljobs  %}
+            <div class=""row row-cols-2">
+            <div class="shadow-lg p-3 mb-5 bg-body rounded container p-3 mt-5  text-black">
+            <h4 style="color:rgb(82, 125, 128)" ><p class="font-weight-bold">{{i.job_name}}</p></h4>
+
+             <h5 style="color: rgb(158, 93, 18);">{{i.company_name}}</h5>
+            <h6>Stipend : {{i.stipend}} /- </h6> 
+            <h6>Location :{{i.location}} </h6> 
+            <a href="{{i.apply_link}}" class="link-info">Apply link</a>
+            </div>
+            </div>
+                
+            {% endfor %}
+    </div>
+
+
+    
+</div>
+
+{% endblock body %}
